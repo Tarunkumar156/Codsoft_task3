@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Digital7';
+    src: url('fonts/digital-7.ttf') format('truetype');
+}
+
+body {
+    height: 100vh;
+    background-color: #0c2339;
+}
+
+.calc-widget {
+    position: relative;
+    padding: 32px;
+    width: 480px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.result-container {
+    position: relative;
+    font-family: 'Digital7';
+    width: calc(100% - 28px);
+    left: 14px;
+    text-align: right;
+    background-color: #2d353f;
+    color: #67e6dc;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px #7efff5;
+}
+
+.result-container:after {
+    content: '';
+    position: absolute;
+    height: calc(100% + 28px);
+    width: calc(100% + 28px);
+    top: -14px;
+    left: -14px;
+    background-color: #526174;
+    border-radius: 18px;
+    box-shadow: 0 8px 0 4px #2d353f;
+    z-index: -1;
+}
+
+.result-container div {
+    position: relative;
+    padding: 4px 8px;
+}
+
+.result-container div:before {
+    content: '888888888888';
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    opacity: 0.1;
+}
+
+.result-container div.value {
+    height: 40px;
+    font-size: 32px;
+}
+
+.result-container div.result {
+    height: 70px;
+    font-size: 60px;
+}
+
+.result-container div.value:before {
+    content: '8888888888888888888888';
+    left: 6px;
+
+}
+
+.number-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 32px;
+    line-height: 0;
+}
+
+label {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    width: calc(25% - 16px);
+    padding: 16px 20px;
+    margin: 18px 8px;
+    color: #ffffff;
+    top: 0;
+    text-align: center;
+    background: linear-gradient(#2d353f, #526174);
+    border-radius: 12px;
+    transition: all linear 0.16s;
+}
+
+label:active {
+    top: 12px;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    height: 92px;
+    width: calc(100% + 3px);
+    top: -4px;
+    left: -3px;
+    background: linear-gradient(90deg, #526174, #2d353f 15%, #2d353f 85%, #526174);
+    border: 2px solid #242b33;
+    border-radius: inherit;
+    z-index: -1;
+    transition: all linear 0.16s;
+}
+
+label:active:after {
+    height: 81px;
+}
+
+input {
+    font-size: inherit;
+    color: inherit;
+    cursor: inherit;
+    border: 0;
+    background-color: transparent;
+}
